@@ -1,0 +1,99 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.5);
+    position: relative; /* Make sure navbar is positioned relatively */
+    z-index: 10;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  
+  .nav-links li a:hover {
+    color: #ffd700;
+  }
+  
+  /* Hamburger menu styling */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Positioned at the top-right corner */
+  }
+  
+  .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+  }
+  
+  /* Add styles for the dropdown menu */
+  .nav-links.active {
+    display: flex; /* Make menu visible when active */
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      width: 200px;
+      display: none;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Optional: Adds shadow for dropdown */
+      z-index: 5; /* Ensure it overlays above other elements */
+    }
+  
+    .navbar.active .nav-links {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .line.rotate1 {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .line.rotate2 {
+      opacity: 0;
+    }
+  
+    .line.rotate3 {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+  
